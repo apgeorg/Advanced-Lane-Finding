@@ -49,18 +49,13 @@ As Next, I apply perspective transform to the image. For that, I hardcode the so
 | 1127, 720     | 960, 720      |
 | 695, 460      | 960, 0        |
 
+I verified that my perspective transform was working as expected by drawing the src and dst points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-#### 2.Thresholded binary image 
+#### 3.Thresholded binary image 
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
 ![alt text][image3]
-
-
-
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
-
-![alt text][image4]
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
