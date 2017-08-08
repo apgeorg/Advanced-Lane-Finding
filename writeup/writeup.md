@@ -40,7 +40,7 @@ As a first step I apply the distortion correction while using the calculated cam
 
 #### 2. Perspective transformation
 
-As Next, I apply perspective transform to the image. For that, I hardcode the source and destination points as following:
+As Next, I apply perspective transform which maps the points in a given image to different, desired, image points with a new perspective. In our case we are interested to get a bird’s-eye view that let us view a lane from above. For that, I hardcode the source and destination points as following:
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
@@ -49,11 +49,13 @@ As Next, I apply perspective transform to the image. For that, I hardcode the so
 | 1127, 720     | 960, 720      |
 | 695, 460      | 960, 0        |
 
-I verified that my perspective transform was working as expected by drawing the src and dst points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+I verified that my perspective transform was working as expected by drawing the src and dst points onto a image and its warped counterpart to verify that the lines appear parallel in the warped image.
+
+![alt text][image3]
 
 #### 3.Thresholded binary image 
 
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image from RGB space to HSV space. The thresholds are chosen on emperical results. Both are applied to the warped image. Here's an example of my output for this step.
 
 ![alt text][image3]
 
