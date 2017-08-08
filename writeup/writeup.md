@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./images/chessboard_undist.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
+[image2]: ./images/undist.png "Undistorted"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
@@ -31,9 +31,10 @@ I start preparing "object points", which will be the (x, y, z) coordinates of th
 
 ### Pipeline (single images)
 
-#### 1. Provide an example of a distortion-corrected image.
+#### 1. Distortion-corrected images
 
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+As a first step I apply the distortion correction while using the calculated camera matrix and distortion coefficients from above. The following figure shows an distortion corrected image in which we can see a difference of the hood of the car at the bottom of the image.
+
 ![alt text][image2]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
