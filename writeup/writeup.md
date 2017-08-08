@@ -26,7 +26,7 @@ The steps of this project are the following:
 
 #### 1. Camera matrix and distortion coefficients
 
-I start preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image. Then I compute the camera calibration and distortion coefficients. I applied this distortion correction to the test image. Here is an example of a distortion corrected calibration image. 
+I start preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image. Then I compute the camera calibration and distortion coefficients. Here is an example of a distortion corrected calibration image. 
 
 ![alt text][image1]
 
