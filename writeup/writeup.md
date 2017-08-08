@@ -1,6 +1,7 @@
 ## Advanced Lane Finding 
 
-The goals / steps of this project are the following:
+In this project, the goal is to identify the lane boundaries in a video from a front-facing camera on a car. 
+The steps of this project are the following:
 
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 * Apply a distortion correction to raw images.
