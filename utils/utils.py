@@ -85,7 +85,7 @@ def add_text(original_img, curv, center):
     font = cv2.FONT_HERSHEY_DUPLEX
     text = 'Radius of curvature: ' + '{:04.2f}'.format(curv) + 'm'
     cv2.putText(img, text, (40,70), font, 1.5, (200,255,155), 2, cv2.LINE_AA)
-    text = 'Vehicle offset from center: ' + '{:04.1f}'.format(center) + 'm '  
+    text = 'Vehicle offset from lane center: ' + '{:04.1f}'.format(center) + 'm '  
     cv2.putText(img, text, (40,120), font, 1.5, (200,255,155), 2, cv2.LINE_AA)
     return img
 
