@@ -19,6 +19,7 @@ The steps of this project are the following:
 [image3]: ./images/warp.png "Warped Image"
 [image4]: ./images/binary.png "Combined Binary Image"
 [image5]: ./images/hist.png "Histogram of Binary Image"
+[image6]: ./images/fit.png "Fit Lines"
 
 [image15]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image16]: ./examples/example_output.jpg "Output"
@@ -82,11 +83,15 @@ I first calculate a histogram along all the columns in the lower half of the ima
 
 Then I use a sliding window algorithm as mentioned in the lessons and fit my lane lines with a 2nd order polynomial kinda like this:
 
-![alt text][image5]
+![alt text][image6]
 
 #### 5. Curvature
 
-I did this in lines # through # in my code in `my_other_file.py`
+To determine the curvature I've followed the steps described in the lessons. With the polynomial fit for the left and right lane lines, I calculated the radius of curvature for each line according to formulas shared in the lessons and this [awesome tutorial](http://www.intmath.com/applications-differentiation/8-radius-curvature.php).
+
+
+
+I also converted the distance units from pixels to meters, assuming 30 meters per 720 pixels in the vertical direction, and 3.7 meters per 700 pixels in the horizontal direction. For the final radius of curvature I took the average of both lines.
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
