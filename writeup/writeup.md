@@ -108,3 +108,9 @@ Here's a [link to my video result](../advanced_lane_lines_output.mp4)
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
 This alogrithm has problems identifying the lane lines in the challenge videos, because of the contrast and the fact that the lane lines are not as clearly visible as in the project video. Possible improvements:
+
+- Check if the detection makes sense (Sanity check)
+- Region of interest
+- Low pass filtering to smooth
+
+
