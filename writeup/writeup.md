@@ -18,8 +18,10 @@ The steps of this project are the following:
 [image2]: ./images/undist.png "Undistorted"
 [image3]: ./images/warp.png "Warped Image"
 [image4]: ./images/binary.png "Combined Binary Image"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image5]: ./images/hist.png "Histogram of Binary Image"
+
+[image15]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image16]: ./examples/example_output.jpg "Output"
 [video1]: ../advanced_lane_lines_output.mp4 "Video"
 
 ### Camera Calibration
@@ -74,7 +76,7 @@ Both are applied to the warped image. So the resulting binary image looks like t
 
 #### 4. Finding lane lines
 
-I first calculate a histogram along all the columns in the lower half of the image. 
+I first calculate a histogram along all the columns in the lower half of the image. Further, I determine the two peaks of the histogram.    
 
 ![alt text][image5]
 
