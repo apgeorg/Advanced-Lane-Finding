@@ -105,12 +105,12 @@ Here's a [link to my video result](../advanced_lane_lines_output.mp4)
 
 ### Discussion
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and what possible improvements could be. 
+This algorithm worked well on the provided project video because it is based on a simple color thresholding technique which means that the thresholds were adjusted to fit these conditions. Further, the algorithm has problems identifying lane lines in the challenge videos, because of the patched roads, different brightness and contrast conditions and the fact that the lanes are not clearly visible. More potential shortcomings could be crossing vehicles and different weather and light conditions. 
 
-This alogrithm has problems identifying the lane lines in the challenge videos, because of the contrast and the fact that the lane lines are not as clearly visible as in the project video. Possible improvements:
+On the other hand possible improvements could be:
 
-- Check if the detection makes sense (Sanity check)
-- Region of interest
-- Low pass filtering to smooth
-
-
+- Filter techniques for better estimation and stabilization,
+- Tweak thresholds and use more color spaces for a robust detection under different conditions,
+- Removing outliers with an region of interest (ROI),
+- Sanity checks to verify that the detection makes sense. 
