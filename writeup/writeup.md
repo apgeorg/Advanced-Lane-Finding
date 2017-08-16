@@ -1,4 +1,4 @@
-## Advanced Lane Finding 
+[image6]: ./images/fit.png "Fit Lines"## Advanced Lane Finding 
 
 In this project, the goal is to identify the lane boundaries in a video from a front-facing camera on a car. 
 The steps of this project are the following:
@@ -20,6 +20,7 @@ The steps of this project are the following:
 [image4]: ./images/binary.png "Combined Binary Image"
 [image5]: ./images/hist.png "Histogram of Binary Image"
 [image6]: ./images/fit.png "Fit Lines"
+[image7]: ./images/final.png "Final Image"
 [video1]: ../advanced_lane_lines_output.mp4 "Video"
 
 ### Camera Calibration
@@ -94,7 +95,7 @@ Finally, the radius of curvature and vehicle's offset from center are displayed 
 
 Finally, I warp the detected lane boundaries back onto the original image with displayed information about the radius of curvature and vehicle's offset from the lane center. Here is an example of my result:
 
-![alt text][image6]
+![alt text][image7]
 
 ### Pipeline (video)
 
