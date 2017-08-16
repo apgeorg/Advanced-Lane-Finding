@@ -56,17 +56,19 @@ Here's an example of my output for this step.
 #### 3. Color thresholds 
 
 I used color thresholds on different color spaces to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image to RGB and HLS space. The thresholds are chosen on emperical results. For the yellow mask I used the thresholds below:
-| Yellow |
+
 |  Color Space  | Lower thres.  | Upper thres.  |  
 |:-------------:|:-------------:|:-------------:| 
-| RGB           | (1,1,1)      | (1,1,1)              | 
-| HLS           | (1,1,1)      | (1,1,1)              |
+| RGB           | (225,180,0)   | (255,255,170) | 
+| HLS           | (20,120,80)   | (45,200,255)  |
 
 For the white mask the follwing thresholds are applied:
 
+|  Color Space  | Lower thres.  | Upper thres.  |  
+|:-------------:|:-------------:|:-------------:| 
+| RGB           | (100,100,200) | (255,255,255) | 
 
-
-Both are applied to the warped image. 
+Both are applied to the warped image. So the resulting binary image looks like this:
 
 ![alt text][image4]
 
