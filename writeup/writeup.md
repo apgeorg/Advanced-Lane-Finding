@@ -1,5 +1,3 @@
-[image6]: ./images/fit.png "Fit Lines"## Advanced Lane Finding 
-
 In this project, the goal is to identify the lane boundaries in a video from a front-facing camera on a car. 
 The steps of this project are the following:
 
@@ -21,7 +19,6 @@ The steps of this project are the following:
 [image5]: ./images/hist.png "Histogram of Binary Image"
 [image6]: ./images/fit.png "Fit Lines"
 [image7]: ./images/final.png "Final Image"
-[video1]: ../advanced_lane_lines_output.mp4 "Video"
 
 ### Camera Calibration
 
