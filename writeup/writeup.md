@@ -32,7 +32,7 @@ I start preparing "object points", which will be the (x, y, z) coordinates of th
 
 ### Pipeline (single images)
 
-#### 1. Distortion-corrected images
+#### 1. Distortion correction 
 
 As a first step I apply the distortion correction while using the calculated camera matrix and distortion coefficients from above. The following figure shows an distortion corrected image in which we can see a difference of the hood of the car at the bottom of the image.
 
@@ -53,19 +53,23 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image3]
 
-#### 3.Thresholded binary image 
+#### 3. Color and gradient thresholds 
 
 I used a combination of color and gradient thresholds to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image from RGB space to HSV space. The thresholds are chosen on emperical results. Both are applied to the warped image. Here's an example of my output for this step.
 
 ![alt text][image3]
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### 4. Finding lane lines
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+I first calculate a histogram along all the columns in the lower half of the image. 
 
 ![alt text][image5]
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+Then I use a sliding window algorithm as mentioned in the lessons and fit my lane lines with a 2nd order polynomial kinda like this:
+
+![alt text][image5]
+
+#### 5. Curvature
 
 I did this in lines # through # in my code in `my_other_file.py`
 
