@@ -20,9 +20,6 @@ The steps of this project are the following:
 [image4]: ./images/binary.png "Combined Binary Image"
 [image5]: ./images/hist.png "Histogram of Binary Image"
 [image6]: ./images/fit.png "Fit Lines"
-
-[image15]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image16]: ./examples/example_output.jpg "Output"
 [video1]: ../advanced_lane_lines_output.mp4 "Video"
 
 ### Camera Calibration
@@ -77,7 +74,7 @@ Both are applied to the warped image. So the resulting binary image looks like t
 
 #### 4. Finding lane lines
 
-I first calculate a histogram along all the columns in the lower half of the image. Further, I determine the two peaks of the histogram.    
+I first calculate a histogram along all the columns in the lower half of the image. Further, I determine the position of two peaks of the histogram.    
 
 ![alt text][image5]
 
@@ -85,21 +82,19 @@ Then I use a sliding window algorithm as mentioned in the lessons and fit my lan
 
 ![alt text][image6]
 
-#### 5. Curvature
+#### 5. Curvature and Vehicle's Offset
 
-To determine the curvature I've followed the steps described in the lessons. With the polynomial fit for the left and right lane lines, I calculated the radius of curvature for each line according to formulas shared in the lessons and this [awesome tutorial](http://www.intmath.com/applications-differentiation/8-radius-curvature.php).
+To determine the curvature I've followed the steps described in the lessons. With the polynomial fit for the left and right lane lines, I calculated the radius of curvature for each line according to formulas as mentioned in the lessons and this [tutorial](http://www.intmath.com/applications-differentiation/8-radius-curvature.php). For the final radius of curvature I took the average of both in meters, assuming 30 meters per 720 pixels in the vertical direction, and 3.7 meters per 700 pixels in the horizontal direction.
 
+To determine the car's position I assume the camera is mounted at the center of the car, such that the lane center is the midpoint at the bottom of the image between the two detected lines. So the resulting vehicle's offset of the lane center from the center of the image (converted from pixels to meters) is the distance from the center of the lane.
 
+Finally, the radius of curvature and vehicle's offset from center are displayed in the top left of each frame.
 
-I also converted the distance units from pixels to meters, assuming 30 meters per 720 pixels in the vertical direction, and 3.7 meters per 700 pixels in the horizontal direction. For the final radius of curvature I took the average of both lines.
+#### 6. Draw Detected Lane Boundaries
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
-
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+Finally, I warp the detected lane boundaries back onto the original image with displayed information about the radius of curvature and vehicle's offset from the lane center. Here is an example of my result:
 
 ![alt text][image6]
-
----
 
 ### Pipeline (video)
 
@@ -109,13 +104,8 @@ The pipeline was applied on the provided project video and the final video resul
 
 Here's a [link to my video result](../advanced_lane_lines_output.mp4)
 
----
-
 ### Discussion
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
 This alogrithm has problems identifying the lane lines in the challenge videos, because of the contrast and the fact that the lane lines are not as clearly visible as in the project video. Possible improvements:
-
-
-
