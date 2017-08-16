@@ -16,8 +16,8 @@ The steps of this project are the following:
 
 [image1]: ./images/chessboard_undist.png "Undistorted"
 [image2]: ./images/undist.png "Undistorted"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
+[image3]: ./images/warp.png "Warped Image"
+[image4]: ./images/binary.png "Combined Binary Image"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ../advanced_lane_lines_output.mp4 "Video"
@@ -49,15 +49,28 @@ As Next, I apply perspective transform which maps the points in a given image to
 | 1130, 720     | 980, 720      |
 | 690, 450      | 980, 0        |
 
-I verified that my perspective transform was working as expected by drawing the src and dst points onto a image and its warped counterpart to verify that the lines appear parallel in the warped image.
+Here's an example of my output for this step.
 
 ![alt text][image3]
 
 #### 3. Color thresholds 
 
-I used color thresholds on different color spaces to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image from BGR to RGB space to HSV space. The thresholds are chosen on emperical results. Both are applied to the warped image. Here's an example of my output for this step.
+I used color thresholds on different color spaces to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image to RGB and HLS space. The thresholds are chosen on emperical results. For the yellow mask I used the thresholds below:
 
-![alt text][image3]
+| Yellow Mask                                   |
+|-----------------------------------------------|
+|  Color Space  | Lower thres.  | Upper thres.  |  
+|:-------------:|:-------------:|:-------------:| 
+| RGB           | (,,)      | (,,)              | 
+| HLS           | (,,)      | (,,)              |
+
+For the white mask the follwing thresholds are applied:
+
+
+
+Both are applied to the warped image. 
+
+![alt text][image4]
 
 #### 4. Finding lane lines
 
