@@ -6,7 +6,7 @@ The steps of this project are the following:
 * Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
 * Apply a distortion correction to raw images.
 * Use color transforms, gradients, etc., to create a thresholded binary image.
-* Apply a perspective transform to rectify binary image ("birds-eye view").
+* Apply a perspective transform to rectify binary image ("bird's-eye view").
 * Detect lane pixels and fit to find the lane boundary.
 * Determine the curvature of the lane and vehicle position with respect to center.
 * Warp the detected lane boundaries back onto the original image.
@@ -20,7 +20,7 @@ The steps of this project are the following:
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[video1]: ../advanced_lane_lines_output.mp4 "Video"
 
 ### Camera Calibration
 
@@ -44,18 +44,18 @@ As Next, I apply perspective transform which maps the points in a given image to
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
+| 595, 450      | 300, 0        | 
+| 190, 720      | 300, 720      |
+| 1130, 720     | 980, 720      |
+| 690, 450      | 980, 0        |
 
 I verified that my perspective transform was working as expected by drawing the src and dst points onto a image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 ![alt text][image3]
 
-#### 3. Color and gradient thresholds 
+#### 3. Color thresholds 
 
-I used a combination of color and gradient thresholds to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image from RGB space to HSV space. The thresholds are chosen on emperical results. Both are applied to the warped image. Here's an example of my output for this step.
+I used color thresholds on different color spaces to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image from BGR to RGB space to HSV space. The thresholds are chosen on emperical results. Both are applied to the warped image. Here's an example of my output for this step.
 
 ![alt text][image3]
 
