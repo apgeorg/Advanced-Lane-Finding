@@ -56,7 +56,7 @@ Here's an example of my output for this step.
 #### 3. Color thresholds 
 
 I used color thresholds on different color spaces to generate a binary image. The color mask is splitted in a yellow and a white mask. I've converted the image to RGB and HLS space. The thresholds are chosen on emperical results. For the yellow mask I used the thresholds below:
-
+| Yellow |
 |  Color Space  | Lower thres.  | Upper thres.  |  
 |:-------------:|:-------------:|:-------------:| 
 | RGB           | (1,1,1)      | (1,1,1)              | 
